@@ -2,11 +2,9 @@
 
 #### library 부착 함수 만들기####
 ## packages에 쓸 거 담아놓기
-
 packages <- c("data.table", "tidyr", "readxl", "dplyr", "leaflet","sf", "ggthemes","leaflet","writexl")
 
-
-load_packages <- function(packages) {
+load_packages <- function(packages) {0
   for(pkg in packages) {
     if(!require(pkg, character.only = TRUE)) {
       install.packages(pkg) # 패키지 설치 
@@ -33,10 +31,20 @@ map <- ft_g %>% st_transform(4326)%>% leaflet() %>% addTiles() %>% addCircleMark
 ft_b <- st_buffer(ft_g, dist = 50) #반경 50m
 ft_bf <- st_transform(ft_b, crs = 5179) #
 
-w
+
 map2 <- map %>% addPolygons(data = st_transform(ft_b, crs = 4326), fillColor = "pink", fillOpacity = 0.5, color = "blue", weight = 2) %>% addCircleMarkers(popup = ~code, radius = 2, color = "red")
-png("data/map2.png", width = 800, height = 600)
+
+## git test 용 
+png("data/map4.png", width = 700, height = 1000)
 dev.off()
+
+########
+
+fread()
+##안녕하세요
+##반가워용 
+
+
 ######################참고 ########
 # f_df <- split(buffer_f,buffer_f$code
 # ft_sp <- split(ft_b,ft_b$code)
