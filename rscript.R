@@ -45,6 +45,9 @@ fread()
 ##반가워용 
 
 
+png("data/map5.png", width = 700, height = 1000)
+dev.off()
+
 ######################참고 ########
 # f_df <- split(buffer_f,buffer_f$code
 # ft_sp <- split(ft_b,ft_b$code)
